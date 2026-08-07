@@ -1,0 +1,52 @@
+version: 1
+default_mode: normal
+
+models:
+  planner:
+    preferred: gpt-5.6-sol
+    fallbacks:
+      - gpt-5.6
+  executor:
+    preferred: gpt-5.6-luna
+    fallbacks:
+      - gpt-5.6-terra
+
+profiles:
+  normal:
+    planner:
+      reasoning: high
+    executor:
+      reasoning: low
+    network: true
+    browser: true
+    external_research: true
+    max_executor_repair_attempts: 3
+    escalate_after_failed_repairs: 2
+
+  poor:
+    planner:
+      reasoning: medium
+    executor:
+      reasoning: low
+    network: false
+    browser: false
+    external_research: false
+    max_executor_repair_attempts: 2
+    escalate_after_failed_repairs: 1
+    delegate_to_chat:
+      - broad_research
+      - architecture_decision
+      - product_decision
+      - technology_selection
+      - broad_debugging
+      - requirements_clarification
+
+history:
+  enabled: false
+  max_runs: 5
+  max_total_mb: 5
+
+storage:
+  max_result_kb: 128
+  max_log_excerpt_kb: 32
+  temp_cleanup: true
