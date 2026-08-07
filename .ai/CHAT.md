@@ -1,6 +1,6 @@
 # Chat ↔ Codex Protocol
 
-This file is the durable context for new ChatGPT conversations. Do not rely on a previous chat window knowing this workflow.
+This file is the durable context for new ChatGPT conversations. Bootstrap with: `Read .ai/CHAT.md from LumosNox-bamboo/poor-token and follow that Chat ↔ Codex protocol for this project.` Do not rely on a previous chat window knowing this workflow.
 
 ## Roles
 
@@ -19,6 +19,8 @@ Codex owns repository execution:
 - make only minimal implementation choices inside an already-decided design.
 
 ChatGPT does not need to manually route Sol/Luna/Terra. The local `ai-codex` workflow owns model routing.
+
+The planner uses the configured stronger planning model briefly. Routine implementation and repair use the configured cheaper executor model, with configured fallbacks and planner escalation only when needed.
 
 ## User commands
 

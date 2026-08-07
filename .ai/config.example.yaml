@@ -1,6 +1,5 @@
 version: 1
 default_mode: normal
-
 models:
   planner:
     preferred: gpt-5.6-sol
@@ -10,7 +9,6 @@ models:
     preferred: gpt-5.6-luna
     fallbacks:
       - gpt-5.6-terra
-
 profiles:
   normal:
     planner:
@@ -22,7 +20,6 @@ profiles:
     external_research: true
     max_executor_repair_attempts: 3
     escalate_after_failed_repairs: 2
-
   poor:
     planner:
       reasoning: medium
@@ -40,13 +37,11 @@ profiles:
       - technology_selection
       - broad_debugging
       - requirements_clarification
-
-history:
-  enabled: false
-  max_runs: 5
-  max_total_mb: 5
-
 storage:
   max_result_kb: 128
   max_log_excerpt_kb: 32
   temp_cleanup: true
+history:
+  enabled: false
+  max_runs: 5
+  max_total_mb: 5
