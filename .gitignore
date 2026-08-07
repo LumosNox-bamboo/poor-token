@@ -1,0 +1,12 @@
+# Project-local Chat ↔ Codex runtime state
+.ai/TASK.md
+.ai/RESULT.md
+.ai/EXECUTION_PLAN.json
+.ai/history/
+.ai/*.log
+.ai/*.tmp
+
+# Common local noise
+.DS_Store
+__pycache__/
+*.pyc
